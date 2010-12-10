@@ -1,0 +1,50 @@
+<html>
+<head>
+	
+	<title>hello</title>
+	<link charset="utf-8" rel="Stylesheet" type="text/css" href="/stylesheets/custom.css" media="all" />
+</head>
+<body>
+
+<div class="page"> 
+	<h2>Register new User</h2> 
+		<form action="" method="post"> 
+			<table class="edit-table"> 
+				<tr> 
+					<td class="label">Your name:</td> 
+					<td> 
+						<input type="text" class="input w250 text" name="email" id="email"/> 
+					</td>			
+				</tr> 
+				
+				<tr>
+					<td class="label">Your email:</td> 
+					<td> 
+						<input type="password" class="input w250 text" name="email" id="email"/> 
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="label">Your password:</td> 
+					<td> 
+						<input type="password" class="input w250 text" name="email" id="email"/> 
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="label">Confirm password:</td> 
+					<td> 
+						<input type="password" class="input w250 text" name="email" id="email"/> 
+					</td>
+				</tr>
+				
+				<tr> 
+					<td></td> 
+					<td><input type="submit" class="powerbutton" value="Sing up" name="form_submit" id="form_submit"/></td> 
+				</tr> 
+			</table> 
+		</form> 
+</div>
+
+</body>
+</html>
