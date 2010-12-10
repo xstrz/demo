@@ -3,6 +3,9 @@
 <% @posts.each do |post| %>
 	Post: <%= post.content %> 
 	| <%= link_to "show", post %> 
-	| <%= link_to "edit", edit_post_path(post) %>
-	| <%= link_to "delete", post, :method	=> :delete %><br />
+	<% if user_signed_in? %>
+		| <%= link_to "edit", edit_post_path(post) %>
+		| <%= link_to "delete", post, :method	=> :delete %>
+	<% end %>
+	<br />
 <% end %>
