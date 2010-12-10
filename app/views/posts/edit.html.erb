@@ -1,10 +1,21 @@
 <h1>Edit post</h1>
 
 <%= form_for(@post) do |f| %>
-	<div>
-	<%= f.label :content %>
-	<%= f.text_field :content %>
+<table class = "edit-table">		
+	<tr>
+		<td class = "label">
+			<%= f.label :content %>: <span class="required">*</span>
+		</td>
+		<td>
+			<%= f.text_area :content, :class => "input w350 text" %>
+		</td>
+	</tr>
 	
-	<%= f.submit "Update post" %>
-	</div>
+	<tr>
+		<td></td>
+		<td>
+			<%= f.submit "Update post", :class => "powerbutton" %></p>
+		</td>
+	</tr>
+</table>
 <% end %>

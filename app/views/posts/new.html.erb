@@ -1,9 +1,21 @@
 <h1>Create new Post</h1>
 
 <%= form_for(@post) do |f| %>
-	<div>
-		<%= f.label :content %>
-		<%= f.text_field :content %>
-		<%= f.submit "Post it!" %>
-	</div>
+	<table class = "edit-table">		
+		<tr>
+			<td class = "label">
+				<%= f.label :content %>: <span class="required">*</span>
+			</td>
+			<td>
+				<%= f.text_area :content, :class => "input w350 text" %>
+			</td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td>
+				<%= f.submit "Post it!", :class => "powerbutton" %></p>
+			</td>
+		</tr>
+	</table>
 <% end %>

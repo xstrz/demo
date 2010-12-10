@@ -1,12 +1,13 @@
 <header>		
 		<ul class="controls"> 
-			<li><%= link_to "Home", posts_path, :class => "login" %></li>
+			<li><%= link_to "Домой", posts_path, :class => "login" %></li>
 			<% if user_signed_in? %>
-				<li><%= link_to "Create", new_post_path, :class => "login" %></li>
-				<li><%= link_to "Log out", destroy_user_session_path, :class => "login" %></li>
+				<li><%= link_to "Создать", new_post_path, :class => "login" %></li>
+				<li><%= link_to "Настройки", edit_user_registration_path, :class => "login" %></li>
+				<li><%= link_to "Выйти", destroy_user_session_path, :class => "login" %></li>
 			<% else %>
-				<li><%= link_to "Login", new_user_session_path, :class => "login" %></li>
-				<li><%= link_to "Sing Up", new_user_registration_path, :class => "singup" %></li>
+				<li><%= link_to "Войти", new_user_session_path, :class => "login" %></li>
+				<li><%= link_to "Регистрация", new_user_registration_path, :class => "singup" %></li>
 			<% end %>
 		</ul>
 </header>

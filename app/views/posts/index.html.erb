@@ -1,11 +1,16 @@
-<h1>Home</h1>
+<h1>Главная</h1>
+
+
 
 <% @posts.each do |post| %>
-	Post: <%= post.content %> 
-	| <%= link_to "show", post %> 
+	Post <%= post.id %>: <br /> 
+	<%= truncate (post.content, :length => 200) %>
+	<%= link_to "continue", post %> 
+	
 	<% if user_signed_in? %>
 		| <%= link_to "edit", edit_post_path(post) %>
 		| <%= link_to "delete", post, :method	=> :delete %>
 	<% end %>
+	<p class = "about">Created: <%= post.created_at %>, updated: <%= post.updated_at %></p>
 	<br />
 <% end %>

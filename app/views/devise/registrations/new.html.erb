@@ -1,0 +1,52 @@
+<h2>Зарегистрироваться</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+	<table class = "edit-table">
+		<tr>
+			<td class = "label">
+				<%= f.label "Имя пользователя" %>: <span class="required">*</span>
+			</td>
+			<td>
+				<%= f.text_field :username, :class => "input w250 text" %>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class = "label">
+				<%= f.label :email %>: <span class="required">*</span>
+			</td>
+			<td>
+				<%= f.text_field :email, :class => "input w250 text" %>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class = "label">
+				<%= f.label "Пароль" %>: <span class="required">*</span>
+			</td>
+			<td>
+				<%= f.password_field :password, :class => "input w250 text" %>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class = "label">
+				<%= f.label "Повторение пароля" %>: <span class="required">*</span>
+			</td>
+			<td>
+				<%= f.password_field :password_confirmation, :class => "input w250 text" %>
+			</td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td>
+				<%= f.submit "Sign up", :class => "powerbutton" %></p>
+			</td>
+		</tr>
+	</table>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>
