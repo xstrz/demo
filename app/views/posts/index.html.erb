@@ -3,13 +3,15 @@
 <% @posts.each do |post| %>
 	Post <%= post.id %>: <br /> 
 	<%= truncate (post.content, :length => 200) %>
-	<%= link_to "continue", post %> 
+	<%= link_to "continue", post %> <br />
 	
 	<% if user_signed_in? %>
-		| <%= link_to "edit", edit_post_path(post) %>
+		<%= link_to "edit", edit_post_path(post) %>
 		| <%= link_to "delete", post, :method	=> :delete %>
 	<% end %>
-	<p class = "about">Created: <%= post.created_at %>, updated: <%= post.updated_at %>,
-	 user: <%= link_to "#{post.user.username}", page_path(post.user_id) %>  </p>
+	<p class = "about">
+	Created: <%= post.created_at.strftime("%d %B %Y at %I:%M%p") %>, 
+	updated: <%= post.updated_at.strftime("%d %B %Y at %I:%M%p") %>,
+	user: <%= link_to "#{post.user.username}", page_path(post.user_id) %>  </p>
 	<br />
 <% end %>
