@@ -1,9 +1,12 @@
 Demo::Application.routes.draw do
+  #get "pages/show"
+
   devise_for :users
 
-  resources :posts
+  resources :posts, :pages
   
-  #match '/new',    :to => 'posts#new'
+  
+  #match '/user-post',    :to => 'posts#new'
   #match '/show',   :to => 'posts#show'
   root :to => "posts#index"
 end

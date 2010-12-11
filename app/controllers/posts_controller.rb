@@ -46,4 +46,18 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
   
+  def show_by_user
+    @post = Post.find(params[:id])
+    @title = "show post by user"
+  end
+  
+  private
+    
+    def return_userid
+      user = User.all
+      u = user.post.find(params[:id])
+    end
+    
+  
+  
 end
