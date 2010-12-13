@@ -1,28 +1,79 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Настройки</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
-	<p><%= f.label :username %><br />
-  <%= f.text_field :username %></p>
 
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
 
-  <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password %></p>
 
-  <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
+		<table class = "edit-table">
+			<tr>
+				<td class = "label">
+					<%= f.label "Имя пользователя" %>:
+				</td>
+				<td>
+					<%= f.text_field :username, :class => "input w250 text" %>
+				</td>
+				<td></td>
+			</tr>
 
-  <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></p>
+			<tr>
+				<td class = "label">
+					<%= f.label :email %>:
+				</td>
+				<td>
+					<%= f.text_field :email, :class => "input w250 text" %>
+				</td>
+				<td></td>
+			</tr>
 
-  <p><%= f.submit "Update" %></p>
+			<tr>
+				<td class = "label">
+					<%= f.label "Пароль" %>:
+				</td>
+				<td>
+					<%= f.password_field :password, :class => "input w250 text" %>
+				</td>
+				<td>
+					<i class ="about">(leave blank if you don't want to change it)</i>
+				</td>
+			</tr>
+
+			<tr>
+				<td class = "label">
+					<%= f.label "Повторение пароля" %>:
+				</td>
+				<td>
+					<%= f.password_field :password_confirmation, :class => "input w250 text" %>
+				</td>
+				<td>
+					<i class ="about">(leave blank if you don't want to change it)</i>
+				</td>
+			</tr>
+
+			<tr>
+				<td class = "label">
+					<%= f.label "Текущий пароль" %>: <span class="required">*</span>
+				</td>
+				<td>
+					<%= f.password_field :current_password, :class => "input w250 text" %>
+				</td>
+				<td>
+					<i class = "about">(we need your current password to confirm your changes)</i>
+				</td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td>
+					<%= f.submit "Update", :class => "powerbutton" %>
+				</td>
+				<td></td>
+			</tr>
+		</table>
+
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+<p><%= link_to "Delete my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %></p>
 
 <%= link_to "Back", :back %>
