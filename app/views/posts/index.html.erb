@@ -4,7 +4,7 @@
 <% else %>
 	<% @posts.each do |post| %>
 		<%= link_to "Post #{post.id}", post %> : <br /> 
-		<%= truncate (post.content, :length => 200) %>
+		<%= truncate(post.content, :length => 200) %>
 		<br />
 	
 		<% if user_signed_in? %>
