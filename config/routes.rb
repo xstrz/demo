@@ -5,7 +5,8 @@ Demo::Application.routes.draw do
 
   resources :posts, :pages
   
-  #match '/user-post',    :to => 'posts#new'
+  match '/about',    :to => 'pages#about'
+  match '/contact',    :to => 'pages#contact'
   #match '/show',   :to => 'posts#show'
   root :to => "posts#index"
 end

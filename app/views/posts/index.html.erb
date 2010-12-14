@@ -1,17 +1,19 @@
 <h1>Главная</h1>
 
 <% @posts.each do |post| %>
-	Post <%= post.id %>: <br /> 
+	<%= link_to "Post #{post.id}", post %> : <br /> 
 	<%= truncate (post.content, :length => 200) %>
-	<%= link_to "continue", post %> <br />
+	<br />
 	
 	<% if user_signed_in? %>
-		<%= link_to "edit", edit_post_path(post) %>
-		| <%= link_to "delete", post, :method	=> :delete %>
+		<% if current_user.id == post.user.id %>
+			<%= link_to "edit", edit_post_path(post) %>
+			| <%= link_to "delete", post, :method	=> :delete %>
+		<% end %>
 	<% end %>
+	
 	<p class = "about">
-	Created: <%= post.created_at.strftime("%d %B %Y at %I:%M%p") %>, 
-	updated: <%= post.updated_at.strftime("%d %B %Y at %I:%M%p") %>,
-	user: <%= link_to "#{post.user.username}", page_path(post.user_id) %>  </p>
+	Created: <%= post.created_at.strftime("%d %B %Y at %I:%M%p") %>,
+	Posted by <%= link_to "#{post.user.username}", page_path(post.user_id) %>  </p>
 	<br />
 <% end %>

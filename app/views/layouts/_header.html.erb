@@ -1,6 +1,6 @@
 <header>		
 		<ul class="controls"> 
-			<li><%= link_to "Домой", posts_path, :class => "login" %></li>
+			<li><%= link_to "Домой", root_path, :class => "login" %></li>
 			<% if user_signed_in? %>
 				<li><%= link_to "Создать", new_post_path, :class => "login" %></li>
 				<li><%= link_to "Настройки", edit_user_registration_path, :class => "login" %></li>
