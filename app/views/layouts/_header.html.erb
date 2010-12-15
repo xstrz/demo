@@ -3,6 +3,7 @@
 			<li><%= link_to "Домой", root_path, :class => "login" %></li>
 			<% if user_signed_in? %>
 				<li><%= link_to "Создать", new_post_path, :class => "login" %></li>
+				<li><%= link_to "Публикации", root_path, :class => "login" %></li>
 				<li><%= link_to "Настройки", edit_user_registration_path, :class => "login" %></li>
 				<li><%= link_to "Выйти (#{current_user.username})", destroy_user_session_path, :class => "login" %></li>
 			<% else %>

@@ -1,6 +1,6 @@
-<h1>Show Post</h1>
+<h1><%= @post.title %></h1>
 
-<%= @post.content %>
+<%= @post.content.html_safe %>
 
 <br />
 <%= link_to "Back", :back %>

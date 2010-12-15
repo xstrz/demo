@@ -1,11 +1,11 @@
-<h1>Главная</h1>
+<br /><br />
 <% if @posts.empty? %>
 	<p>No posts!</p>
 <% else %>
 	<% @posts.each do |post| %>
-		<%= link_to "Post #{post.id}", post %> : <br /> 
-		<%= truncate(post.content, :length => 200) %>
-		<br />
+		<%= link_to "#{post.title}", post , :class => "title" %> <br /> 
+		
+		<%= post.content.html_safe %>
 	
 		<% if user_signed_in? %>
 			<% if current_user.id == post.user.id %>
@@ -15,8 +15,12 @@
 		<% end %>
 	
 		<p class = "about">
-			Created: <%= post.created_at.strftime("%d %B %Y at %I:%M%p") %>,
-			Posted by <%= link_to "#{post.user.username}", page_path(post.user_id) %>  </p>
+			<%= post.created_at.strftime("%d %B %Y at %I:%M%p") %>
+			By <%= link_to "#{post.user.username}", page_path(post.user_id) %>
+			| <%= link_to "No comments", root_path %>
+			<br />
+			Labels <%= link_to "apple" %>, <%= link_to "microsoft" %>, <%= link_to "google" %>
+		</p>
 			<br />
 	<% end %>
 <% end %>

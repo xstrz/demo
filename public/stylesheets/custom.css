@@ -3,7 +3,8 @@
 }
 
 body {
-	background: #99ccff;
+	/*background: #99ccff;*/
+	background: #D1D1D4;
 }
 
 header {
@@ -22,16 +23,51 @@ header {
 
 section {
   margin-top: 1em;
-  font-size: 120%;
   padding: 20px;
   background: #fff;
+	font:14px Geneva,Helvetica,Arial,sans-serif;
 }
 
 section h1 {
   font-size: 200%;
 }
 
+div .logo1 {
+	position: absolute;
+	top: 5px;
+	height: 100px;
+	width: 200px;
+	background: top left no-repeat url(/images/logo.jpg);
+	display: block;
+	left-margin: 300px;
+}
 
+.logo {
+	position: relative;
+	cursor: pointer;
+	float: right;
+	display: block;
+	left: 170px;
+	left-margin: 300px;
+	left-padding: 300px;
+	
+}
+
+img {
+	float: left;
+	padding: 10px;	
+}
+
+p { 
+	font: 13px Verdana, sans-serif;
+	/*font-size: 13px; */
+	color: #000;
+	margin: 0px; 
+	text-decoration: none; 
+}
+
+.title { font-size: 18px; color: #363636; text-decoration: none; text-transform: uppercase; left-padding: 50px;}
+.title:hover { color: #363636; text-decoration: underline; }
 
 /* -------------------------------------------------------------------------- */
 /* Control Icons */
@@ -94,7 +130,7 @@ ul.controls li a:hover { color: #fff; background-color: #433C92;}
 }
 .input:focus { /* border-color: #4654A3; */ border-color: #666; }
 
-.powerbutton { border: 0px none;  cursor: pointer; border: 1px solid #4D4793; background: #433C92 url('/images/powerbutton.png') repeat-x; color: #fff; padding: 5px 6px; /* font-family: Georgia, Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; */ -moz-border-radius: 5px; -khtml-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+.powerbutton { border: 0px none;  cursor: pointer; border: 1px solid #4D4793; background: #433C92 repeat-x; color: #fff; padding: 5px 6px; /* font-family: Georgia, Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; */ -moz-border-radius: 5px; -khtml-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
 .powerbutton:hover { border: 1px solid #28207E; }
 .powerbutton:active { background: #433C92; }
 
@@ -124,5 +160,29 @@ table.edit-table td .tooltip { font-size: 11px; color: #777; padding-top: 2px; }
 table.edit-table td.label { width: 160px; text-align: right; padding-top: 14px; vertical-align: top; }
 table.edit-table td.label span.required { color: #ff0000; }
 
-.about { margin-top: 1px;  font-family: Arial; font-size: 10px; color: #777; }
+.about { 
+	margin-top: 1px;  
+	font-family: Arial; 
+	font-size: 10px; 
+	color: #777; 
+	text-align: right;
+}
+
+.about a { 
+	margin-top: 1px;  
+	font-family: Arial; 
+	font-size: 10px; 
+	color: #433C92; 
+	text-align: right;
+}
+
+.about a:hover ;{ 
+	margin-top: 1px;  
+	font-family: Arial; 
+	font-size: 10px; 
+	color: #433C92; 
+	text-align: right;
+}
+
+
 

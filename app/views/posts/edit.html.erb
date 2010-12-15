@@ -1,4 +1,4 @@
-<h1>Edit post</h1>
+<h1><%= @post.title %></h1>
 
 <%= form_for(@post) do |f| %>
 <table class = "edit-table">		
@@ -10,12 +10,21 @@
     </td>
    </tr>
 
+		<tr>
+			<td class = "label">
+				<%= f.label :title %>: <span class="required">*</span>
+			</td>
+			<td>
+				<%= f.text_field :title, :class => "mceEditor" %>
+			</td>
+		</tr>
+
 	<tr>
 		<td class = "label">
 			<%= f.label :content %>: <span class="required">*</span>
 		</td>
 		<td>
-			<%= f.text_area :content, :class => "input w350 text" %>
+			<%= f.cktext_area :content, :width=>'540px', :height=>'200px' %>
 		</td>
 	</tr>
 	

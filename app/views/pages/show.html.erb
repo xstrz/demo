@@ -1,7 +1,7 @@
-<h1>Статьи пользователя: <%= @user.username   %></h1>
+<h1>Статьи пользователя <%= @user.username   %></h1>
 
 <% @posts.each do |post| %>
-	Post <%= post.id %>:<br />  
-	<%= post.content %><br /><br />
+	<%= post.title %><br />  
+	<%= post.content.html_safe %><br /><br />
 	
 <% end %>

@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!,      :except =>  [:index, :show]
   before_filter :get_post,                :only   =>  [:edit, :update, :destroy]
   before_filter :check_auth_current_user, :only   =>  [:edit, :update, :destroy]
+  uses_tiny_mce :only => [:new, :create, :edit, :update]
   
   def get_post
     @post = Post.find(params[:id])
@@ -16,7 +17,7 @@ class PostsController < ApplicationController
   end
   
   def index
-    @title = "Index page"
+    @title = "Social Blogs"
     @posts = Post.all
   end
   

@@ -10,13 +10,22 @@
 	<%= stylesheet_link_tag 'custom' %>
 	
 	<%= javascript_include_tag 'uppod' %>
-	<%= javascript_include_tag 'video-js/video' %>
+	<%= javascript_include_tag 'flowplayer-3.2.4.min' %>
+	<%= include_tiny_mce_if_needed %>
+	<%= javascript_include_tag :ckeditor %>
 </head>
 <body>
 
 <div class = "container">
 	<%= render 'layouts/header' %>
-	
+
+
+<!--
+	<div class = "logo1">
+		<%= link_to "", root_path, :class => "logo" %>
+	</div>
+-->
+
 	<section class="round">
 		<% flash.each do |key, value| %>
 			<div class="flash <%= key %>"><%= value %></div>
